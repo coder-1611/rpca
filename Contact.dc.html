@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;0,6..72,500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',system-ui,sans-serif;background:#F4EDDC;color:#17170F;-webkit-font-smoothing:antialiased}
+  a{color:#0E3B2E;text-decoration:none}
+  a:hover{color:#E9A23B}
+  ::selection{background:#E9A23B;color:#08281E}
+  image-slot::part(ring){display:none}
+  image-slot::part(frame){background:linear-gradient(150deg,#0c3527 0%,#245c46 55%,#c9b892 135%)}
+  image-slot::part(empty){opacity:0}
+  .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;pointer-events:none;text-align:center;padding:20px;transition:opacity .4s ease}
+  image-slot[data-filled] + .ph{opacity:0}
+  input,select{font-family:'Archivo',sans-serif;font-size:15px;width:100%;padding:15px 16px;border:1.5px solid rgba(14,59,46,.22);border-radius:4px;background:#fff;color:#17170F;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+  input:focus,select:focus{border-color:#E9A23B;box-shadow:0 0 0 3px rgba(233,162,59,.2)}
+  label{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#0E3B2E;margin-bottom:8px}
+</style>
+</helmet>
+
+<div style="min-width:1080px">
+  <header style="position:sticky;top:0;z-index:50;background:#08281E;border-bottom:1px solid rgba(233,162,59,.25)">
+    <nav style="max-width:1320px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;gap:12px">
+        <span style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e);position:relative;box-shadow:0 0 0 2px rgba(233,162,59,.35)"><span style="position:absolute;inset:0;border-radius:50%;border-top:2px dashed rgba(8,40,30,.55);border-bottom:2px dashed rgba(8,40,30,.55);transform:rotate(30deg)"></span></span>
+        <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC;line-height:1">RPCA</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:6px">
+        <a href="Home.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Home</a>
+        <a href="Programs.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Programs</a>
+        <a href="Facilities.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Facilities</a>
+        <a href="Coaches.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Coaches</a>
+        <a href="Gallery.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Gallery</a>
+        <a href="Contact.dc.html" style="margin-left:12px;background:#E9A23B;color:#08281E;font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;padding:11px 18px;border-radius:2px">Book a Trial</a>
+      </div>
+    </nav>
+  </header>
+
+  <section style="background:#08281E;padding:90px 40px 70px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-160px;right:-40px;width:520px;height:520px;background:radial-gradient(circle,rgba(233,162,59,.22),transparent 62%);pointer-events:none"></div>
+    <div style="max-width:1320px;margin:0 auto;position:relative">
+      <span data-reveal style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#E9A23B;font-weight:800">Contact / Join</span>
+      <h1 data-reveal style="font-family:'Anton',sans-serif;font-size:clamp(52px,8vw,116px);line-height:.9;color:#F4EDDC;margin-top:16px">BOOK YOUR<br>TRIAL</h1>
+      <p data-reveal style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(19px,2.1vw,25px);color:#EFE7D4;max-width:640px;margin-top:20px;line-height:1.5">Tell us a little about the player. We'll get in touch to schedule a no-pressure trial session and find the right batch.</p>
+    </div>
+  </section>
+
+  <section style="background:#F4EDDC;padding:80px 40px 100px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start">
+
+      <!-- FORM -->
+      <div data-reveal style="background:#fff;border:1px solid rgba(14,59,46,.12);border-radius:10px;padding:44px 42px;box-shadow:0 24px 60px rgba(8,40,30,.10)">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:40px 10px">
+            <div style="width:76px;height:76px;border-radius:50%;background:#0E3B2E;display:flex;align-items:center;justify-content:center;margin:0 auto" innerHTML="{{ tickIcon }}"></div>
+            <h2 style="font-family:'Anton',sans-serif;font-size:34px;color:#0E3B2E;margin-top:24px;line-height:1.05">REQUEST RECEIVED!</h2>
+            <p style="font-size:17px;color:#3a3a2e;line-height:1.65;margin-top:14px;max-width:420px;margin-left:auto;margin-right:auto">Thanks {{ nameOut }} — we've got your trial request for the <strong>{{ batchOut }}</strong> batch. A coach from RPCA will call you on <strong>{{ phoneOut }}</strong> shortly to confirm a time.</p>
+            <button onClick="{{ reset }}" style="margin-top:26px;background:#E9A23B;color:#08281E;font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:14px;padding:15px 32px;border:none;border-radius:3px;cursor:pointer">Book Another</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h2 style="font-family:'Anton',sans-serif;font-size:30px;color:#17170F;letter-spacing:.5px">TRIAL BOOKING</h2>
+            <p style="color:#6a6a58;font-size:14px;margin-top:6px">All fields required. It takes under a minute.</p>
+            <div style="margin-top:28px;display:flex;flex-direction:column;gap:20px">
+              <div>
+                <label>Player's Name</label>
+                <input type="text" value="{{ name }}" onInput="{{ onName }}" placeholder="e.g. Aryan Kumar" />
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div>
+                  <label>Player's Age</label>
+                  <input type="number" min="5" max="60" value="{{ age }}" onInput="{{ onAge }}" placeholder="e.g. 12" />
+                </div>
+                <div>
+                  <label>Phone Number</label>
+                  <input type="tel" value="{{ phone }}" onInput="{{ onPhone }}" placeholder="+91 …" />
+                </div>
+              </div>
+              <div>
+                <label>Preferred Batch</label>
+                <select value="{{ batch }}" onChange="{{ onBatch }}">
+                  <option value="Sub-Junior (6–10)">Sub-Junior · Age 6–10</option>
+                  <option value="Junior (11–15)">Junior · Age 11–15</option>
+                  <option value="Senior (16+)">Senior · Age 16+</option>
+                  <option value="1-on-1 Personal Coaching">1-on-1 Personal Coaching</option>
+                  <option value="Not sure — advise me">Not sure — advise me</option>
+                </select>
+              </div>
+              <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#fbeaea;border:1px solid #e3b1b1;color:#a23b3b;font-size:14px;padding:12px 16px;border-radius:4px">{{ errorMsg }}</div>
+              </sc-if>
+              <button onClick="{{ submit }}" style="background:#08281E;color:#F4EDDC;font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:15px;padding:18px;border:none;border-radius:3px;cursor:pointer;transition:background .25s ease" style-hover="background:#E9A23B;color:#08281E">Request My Trial →</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- INFO -->
+      <div data-reveal style="display:flex;flex-direction:column;gap:20px">
+        <div style="background:#0E3B2E;border-radius:10px;padding:34px 32px;color:#EFE7D4">
+          <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:16px;margin-bottom:16px">WHERE TO FIND US</div>
+          <div style="font-size:16px;line-height:1.75">Morabadi Ground area,<br>Ranchi, Jharkhand 834008<br>India</div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(233,162,59,.22);font-size:14px;color:#cdd6ce;line-height:1.6"><em style="font-family:'Newsreader',serif">Address is a placeholder — update with your exact ground and landmark.</em></div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(14,59,46,.12);border-radius:10px;padding:34px 32px">
+          <div style="font-family:'Anton',sans-serif;color:#0E3B2E;letter-spacing:1px;font-size:16px;margin-bottom:16px">TRAINING TIMINGS</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#3a3a2e">
+            <div style="display:flex;justify-content:space-between"><span>Morning session</span><span style="font-weight:700;color:#0E3B2E">5:30 – 8:30 AM</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Evening (floodlit)</span><span style="font-weight:700;color:#0E3B2E">4:00 – 9:00 PM</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Days</span><span style="font-weight:700;color:#0E3B2E">Monday – Saturday</span></div>
+          </div>
+        </div>
+        <div style="background:#E9A23B;border-radius:10px;padding:30px 32px;color:#08281E">
+          <div style="font-family:'Anton',sans-serif;letter-spacing:1px;font-size:16px;margin-bottom:12px">CALL, EMAIL OR DM</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;font-weight:600">
+            <a href="tel:+919000000000" style="color:#08281E" style-hover="color:#fff">+91 90000 00000</a>
+            <a href="mailto:hello@rpca.in" style="color:#08281E" style-hover="color:#fff">hello@rpca.in</a>
+            <a href="https://instagram.com/rpca_cricket_academy_ranchi" target="_blank" style="color:#08281E;display:inline-flex;align-items:center;gap:8px" style-hover="color:#fff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@rpca_cricket_academy_ranchi</a>
+          </div>
+          <div style="margin-top:14px;font-size:12px;line-height:1.5;opacity:.75"><em style="font-family:'Newsreader',serif">Phone &amp; email are placeholders. Instagram handle is live.</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#061e16;color:#cdd6ce;padding:70px 40px 40px">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(233,162,59,.18)">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e)"></span><span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC">RPCA</span></div>
+        <p style="margin-top:16px;font-size:14px;line-height:1.6;max-width:280px;color:#9fb0a6">Ranchi Players Cricket Academy. Developing Jharkhand's next generation of cricketers — one disciplined session at a time.</p>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">EXPLORE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+          <a href="Programs.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Programs</a>
+          <a href="Facilities.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Facilities</a>
+          <a href="Coaches.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Coaches</a>
+          <a href="Gallery.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">VISIT</div>
+        <div style="font-size:14px;line-height:1.7;color:#9fb0a6">Morabadi Ground area,<br>Ranchi, Jharkhand 834008<br><br>Mon–Sat · 5:30 AM–9:00 PM</div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">CONNECT</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;color:#9fb0a6">
+          <a href="tel:+919000000000" style="color:#cdd6ce" style-hover="color:#E9A23B">+91 90000 00000</a>
+          <a href="mailto:hello@rpca.in" style="color:#cdd6ce" style-hover="color:#E9A23B">hello@rpca.in</a>
+          <a href="https://instagram.com/rpca_cricket_academy_ranchi" target="_blank" style="color:#cdd6ce" style-hover="color:#E9A23B">@rpca_cricket_academy_ranchi</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:20px auto 0;display:flex;justify-content:space-between;font-size:12px;color:#6f7f75;letter-spacing:.5px">
+      <span>© 2026 RPCA Cricket Academy, Ranchi.</span>
+      <span>Not affiliated with any official body or player. Contact details are placeholders.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: "", age: "", phone: "", batch: "Sub-Junior (6–10)", submitted: false, error: false, errorMsg: "", nameOut: "", batchOut: "", phoneOut: "" };
+  renderVals() {
+    return {
+      name: this.state.name, age: this.state.age, phone: this.state.phone, batch: this.state.batch,
+      submitted: this.state.submitted, notSubmitted: !this.state.submitted,
+      error: this.state.error, errorMsg: this.state.errorMsg,
+      nameOut: this.state.nameOut, batchOut: this.state.batchOut, phoneOut: this.state.phoneOut,
+      tickIcon: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+      onName: (e) => this.setState({ name: e.target.value }),
+      onAge: (e) => this.setState({ age: e.target.value }),
+      onPhone: (e) => this.setState({ phone: e.target.value }),
+      onBatch: (e) => this.setState({ batch: e.target.value }),
+      submit: () => {
+        const { name, age, phone, batch } = this.state;
+        if (!name.trim() || !String(age).trim() || !phone.trim()) {
+          this.setState({ error: true, errorMsg: "Please fill in the player's name, age and a phone number." });
+          return;
+        }
+        this.setState({ submitted: true, error: false, nameOut: name.trim().split(" ")[0], batchOut: batch, phoneOut: phone.trim() });
+      },
+      reset: () => this.setState({ name: "", age: "", phone: "", batch: "Sub-Junior (6–10)", submitted: false, error: false }),
+    };
+  }
+  componentDidMount() {
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach((e) => { e.style.opacity = '0'; e.style.transform = 'translateY(26px)'; e.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; io.unobserve(en.target); } });
+    }, { threshold: 0.1 });
+    els.forEach((e) => io.observe(e));
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — RPCA · Ranchi Players Cricket Academy</title>
+<meta name="description" content="The RPCA pathway: Foundation (7–12), Development (13–16) and the Elite Pathway (17+). Coach-led batches, bowling machine, video analysis and a measured route toward JSCA and state cricket.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="grain"></div>
+<div class="vignette"></div>
+<div class="cursor" id="cursor"></div>
+
+<div class="spine" aria-hidden="true">
+  <svg id="spineSvg" preserveAspectRatio="none" viewBox="0 0 100 100">
+    <path class="arc-glow" id="arcGlow" vector-effect="non-scaling-stroke"></path>
+    <path class="arc" id="arcPath" vector-effect="non-scaling-stroke"></path>
+  </svg>
+  <div class="spine-ball" id="spineBall"></div>
+</div>
+
+<header id="hdr">
+  <a class="brand" href="index.html" aria-label="RPCA home">
+    <svg class="mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" fill="#c9432a" stroke="#f2a71b" stroke-width="1.5"/>
+      <path d="M8 13 Q20 20 32 13 M8 27 Q20 20 32 27" stroke="#f4efe1" stroke-width="1.3" fill="none" opacity=".85"/>
+    </svg>
+    RPCA
+  </a>
+  <nav class="nav-links" id="nav">
+    <a href="programs.html" aria-current="page">Programs</a>
+    <a href="coaches.html">Coaches</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Book a Trial</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ═══ SUB-HERO ═══ -->
+<section class="subhero">
+  <div class="bg"><img src="uploads/youth-batting.jpg" alt="A young RPCA batter training in the nets"></div>
+  <div class="subhero-inner">
+    <div class="crumb"><a href="index.html">RPCA</a> — 01 · Programs</div>
+    <h1>The <em>Pathway.</em></h1>
+    <p class="sub">One delivery, three stages — a structured route from a child's first grip to a cricketer knocking on the door of state selection.</p>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tickRow"></div></div>
+
+<!-- ═══ INTRO ═══ -->
+<section class="manifesto">
+  <div class="wrap">
+    <div class="eyebrow rise">How we build players</div>
+    <p class="lead rise" data-d="1" style="margin-top:26px">
+      We don't sell <em>net time</em>. We build a player over years — <b>stage by stage,</b> with the next step always in view.
+    </p>
+    <div class="meta">
+      <div class="rise" data-d="1"><h4>Batch sizes</h4><p>Small groups so every player gets real, honest correction each session — not a queue.</p></div>
+      <div class="rise" data-d="2"><h4>Sessions</h4><p>Morning and evening batches, so school and work don't have to mean missing training.</p></div>
+      <div class="rise" data-d="3"><h4>Progression</h4><p>Move up when your game is ready — assessed by your coach, not by your birthday alone.</p></div>
+      <div class="rise" data-d="4"><h4>The goal</h4><p>District, JSCA age-group and league cricket — a real, measured destination.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGE 01 — FOUNDATION ═══ -->
+<section class="section band-night">
+  <div class="wrap">
+    <div class="split">
+      <div class="feat rise"><img src="uploads/youth-batting.jpg" alt="Young batter setting up in the nets"><span class="tag">Foundation · Ages 7–12</span></div>
+      <div>
+        <div class="eyebrow rise">Stage 01</div>
+        <h2 class="big rise" data-d="1" style="margin-top:18px;font-size:clamp(38px,5.5vw,72px)">Foundation</h2>
+        <div class="prose rise" data-d="2" style="margin-top:22px">
+          <p>The most important years. Before a single statistic matters, we build a clean, repeatable technique and — just as importantly — a love for the game that survives the hard days.</p>
+        </div>
+        <ul class="fac-list rise" data-d="3" style="margin-top:30px">
+          <li><span class="fn">01</span><div><h4>Grip, Stance &amp; Balance</h4><p>The non-negotiable fundamentals, drilled until they hold without thinking.</p></div></li>
+          <li><span class="fn">02</span><div><h4>Soft-ball to Hard-ball</h4><p>A safe, confidence-building progression onto the real cricket ball.</p></div></li>
+          <li><span class="fn">03</span><div><h4>Habits First</h4><p>Punctuality, effort and respect — the things that make cricketers before runs do.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGE 02 — DEVELOPMENT ═══ -->
+<section class="section band-pitch">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="feat rise"><img src="uploads/nets-training.jpg" alt="A coach correcting a young batter in the nets" style="object-position:50% 30%"><span class="tag">Development · Ages 13–16</span></div>
+      <div>
+        <div class="eyebrow rise">Stage 02</div>
+        <h2 class="big rise" data-d="1" style="margin-top:18px;font-size:clamp(38px,5.5vw,72px)">Development</h2>
+        <div class="prose rise" data-d="2" style="margin-top:22px">
+          <p>Technique meets pressure. This is where a decent player becomes a dependable one — able to read a length, build an innings and hold a spell when it matters.</p>
+        </div>
+        <ul class="fac-list rise" data-d="3" style="margin-top:30px">
+          <li><span class="fn">01</span><div><h4>Bowling Machine Work</h4><p>Programmable pace and length to groove a shot or expose and drill a weakness.</p></div></li>
+          <li><span class="fn">02</span><div><h4>Video Analysis</h4><p>Slow-motion breakdowns — see the flaw, then fix it inside the same session.</p></div></li>
+          <li><span class="fn">03</span><div><h4>Match-Simulation Nets</h4><p>Scenario training: chase a target, defend an over, bowl at the death.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGE 03 — ELITE ═══ -->
+<section class="section band-night">
+  <div class="wrap">
+    <div class="split">
+      <div class="feat rise"><img src="uploads/yuvraj-highlighted.jpg" alt="Yuvraj Kumar — Jharkhand T20 player and RPCA coach"><span class="tag">Elite Pathway · Ages 17+</span></div>
+      <div>
+        <div class="eyebrow rise">Stage 03</div>
+        <h2 class="big rise" data-d="1" style="margin-top:18px;font-size:clamp(38px,5.5vw,72px)">Elite Pathway</h2>
+        <div class="prose rise" data-d="2" style="margin-top:22px">
+          <p>The state route. For players chasing real cricket, we prepare the whole athlete — technique, tactics, strength and temperament — for JSCA trials and competitive league cricket.</p>
+          <p>RPCA players have gone on to represent Ranchi sides in the Jharkhand T20.</p>
+        </div>
+        <ul class="fac-list rise" data-d="3" style="margin-top:30px">
+          <li><span class="fn">01</span><div><h4>Strength &amp; Conditioning</h4><p>Building the engine competitive cricket actually demands, injury-smart.</p></div></li>
+          <li><span class="fn">02</span><div><h4>Competitive Fixtures</h4><p>Real match exposure to test the work against opposition that pushes back.</p></div></li>
+          <li><span class="fn">03</span><div><h4>Trial Preparation</h4><p>Targeted readiness for JSCA age-group and league selection.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMATS ═══ -->
+<section class="section band-pitch-glow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rise">Ways to train</div>
+        <h2 class="big rise" data-d="1" style="margin-top:20px">Pick your format.</h2>
+      </div>
+      <p class="note rise" data-d="2">Whatever your age or level, there's a way into the nets that fits your week. Timings and fees are confirmed on your trial visit.</p>
+    </div>
+    <div class="tiers" style="grid-template-columns:repeat(2,1fr);max-width:820px">
+      <article class="tier rise" data-d="1">
+        <div class="body" style="padding-top:30px">
+          <span class="learn" style="margin:0 0 14px">Regular</span>
+          <h3>Group Batches</h3>
+          <p>Structured morning and evening batches, grouped by stage. The core of the academy — consistent, coach-led training through the week.</p>
+        </div>
+      </article>
+      <article class="tier rise" data-d="2">
+        <div class="body" style="padding-top:30px">
+          <span class="learn" style="margin:0 0 14px">Focused</span>
+          <h3>One-on-One</h3>
+          <p>Personal sessions to fast-track a specific area — a new shot, a remodelled action, or trial-ready fine-tuning with a coach's full attention.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="grid4">
+      <div class="stat rise" data-d="1"><div class="num" data-count="3">0</div><div class="lab">Development Stages</div></div>
+      <div class="stat rise" data-d="2"><div class="num" data-count="7" data-suffix="–19+">0</div><div class="lab">Ages We Coach</div></div>
+      <div class="stat rise" data-d="3"><div class="num" data-count="100" data-suffix="+">0</div><div class="lab">Cricketers Trained</div></div>
+      <div class="stat rise" data-d="4"><div class="num" data-count="2">0</div><div class="lab">Turf &amp; Matting Nets</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow rise">Book a Trial</div>
+    <h2 class="rise" data-d="1">Find your <em>stage.</em></h2>
+    <p class="sub rise" data-d="2">Come in for a session and we'll place you honestly — then show you exactly what the next step looks like.</p>
+    <div class="actions rise" data-d="3">
+      <a class="btn btn-amber" href="contact.html">Book a Trial →</a>
+      <a class="btn btn-ghost" href="coaches.html">Meet the coaches</a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <div class="foot-brand">R<span>P</span>CA</div>
+          <p>Ranchi Players Cricket Academy. A serious cricketing home in Ranchi, Jharkhand — coach-led development and a real pathway to state cricket.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Reach Us</h5>
+          <ul>
+            <li><a href="https://www.instagram.com/rpca_cricket_academy_ranchi/" target="_blank" rel="noopener">◆ @rpca_cricket_academy_ranchi</a></li>
+            <li><a href="contact.html">Book a trial session</a></li>
+            <li><a href="contact.html">DIG Ground, Bariatu · Ranchi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="yr"></span> Ranchi Players Cricket Academy</span>
+        <span class="ig">Where Ranchi learns the game.</span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

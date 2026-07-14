@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;0,6..72,500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',system-ui,sans-serif;background:#F4EDDC;color:#17170F;-webkit-font-smoothing:antialiased}
+  a{color:#0E3B2E;text-decoration:none}
+  a:hover{color:#E9A23B}
+  ::selection{background:#E9A23B;color:#08281E}
+  image-slot::part(ring){display:none}
+  image-slot::part(frame){background:linear-gradient(150deg,#0c3527 0%,#245c46 55%,#c9b892 135%)}
+  image-slot::part(empty){opacity:0}
+  .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;pointer-events:none;text-align:center;padding:20px;transition:opacity .4s ease}
+  image-slot[data-filled] + .ph{opacity:0}
+</style>
+<script src="image-slot.js"></script>
+</helmet>
+
+<div style="min-width:1080px">
+  <header style="position:sticky;top:0;z-index:50;background:#08281E;border-bottom:1px solid rgba(233,162,59,.25)">
+    <nav style="max-width:1320px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;gap:12px">
+        <span style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e);position:relative;box-shadow:0 0 0 2px rgba(233,162,59,.35)"><span style="position:absolute;inset:0;border-radius:50%;border-top:2px dashed rgba(8,40,30,.55);border-bottom:2px dashed rgba(8,40,30,.55);transform:rotate(30deg)"></span></span>
+        <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC;line-height:1">RPCA</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:6px">
+        <a href="Home.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Home</a>
+        <a href="Programs.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Programs</a>
+        <a href="Facilities.dc.html" style="color:#E9A23B;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px">Facilities</a>
+        <a href="Coaches.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Coaches</a>
+        <a href="Gallery.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Gallery</a>
+        <a href="Contact.dc.html" style="margin-left:12px;background:#E9A23B;color:#08281E;font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;padding:11px 18px;border-radius:2px" style-hover="background:#F4EDDC">Book a Trial</a>
+      </div>
+    </nav>
+  </header>
+
+  <section style="background:#08281E;padding:96px 40px 80px;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0"><image-slot id="facilities-hero" src="uploads/nets-training.jpg" shape="rect" fit="cover" placeholder="Coaching under the floodlights"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,40,30,.95) 0%,rgba(8,40,30,.78) 48%,rgba(8,40,30,.42) 100%);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-160px;left:-60px;width:520px;height:520px;background:radial-gradient(circle,rgba(233,162,59,.22),transparent 62%);pointer-events:none"></div>
+    <div style="max-width:1320px;margin:0 auto;position:relative;z-index:2">
+      <span data-reveal style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#E9A23B;font-weight:800">Facilities</span>
+      <h1 data-reveal style="font-family:'Anton',sans-serif;font-size:clamp(56px,9vw,128px);line-height:.9;color:#F4EDDC;margin-top:16px">A GROUND<br>BUILT TO TRAIN</h1>
+      <p data-reveal style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(20px,2.2vw,26px);color:#EFE7D4;max-width:700px;margin-top:24px;line-height:1.5">Turf and matting nets, floodlights for evening sessions, a bowling machine and video analysis — everything a serious cricketer needs, in one Ranchi setup.</p>
+    </div>
+  </section>
+
+  <section style="background:#F4EDDC;padding:96px 40px">
+    <div style="max-width:1320px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <sc-for list="{{ facilities }}" as="f" hint-placeholder-count="6">
+          <div data-reveal style="background:#fff;border:1px solid rgba(14,59,46,.12);border-radius:8px;padding:38px 34px;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease" style-hover="transform:translateY(-6px);box-shadow:0 20px 50px rgba(8,40,30,.14);border-color:#E9A23B">
+            <div style="width:64px;height:64px;border-radius:50%;background:#0E3B2E;display:flex;align-items:center;justify-content:center;color:#E9A23B" innerHTML="{{ f.icon }}"></div>
+            <h3 style="font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.5px;color:#0E3B2E;margin-top:22px;line-height:1.05">{{ f.title }}</h3>
+            <p style="color:#4a4a3c;font-size:15.5px;line-height:1.7;margin-top:12px">{{ f.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#0E3B2E;padding:90px 40px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-120px;left:20%;width:400px;height:400px;background:radial-gradient(circle,rgba(233,162,59,.35),transparent 60%);pointer-events:none"></div>
+    <div style="position:absolute;top:-120px;left:60%;width:400px;height:400px;background:radial-gradient(circle,rgba(233,162,59,.30),transparent 60%);pointer-events:none"></div>
+    <div data-reveal style="max-width:900px;margin:0 auto;text-align:center;position:relative">
+      <span style="font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#E9A23B;font-weight:800">Evening Sessions</span>
+      <h2 style="font-family:'Anton',sans-serif;font-size:clamp(38px,5.5vw,72px);color:#F4EDDC;line-height:.95;margin-top:14px">TRAINING DOESN'T STOP<br>WHEN THE SUN DOES.</h2>
+      <p style="font-size:18px;color:#cdd6ce;max-width:640px;margin:22px auto 0;line-height:1.7">Full floodlighting means students who study or work by day can still get quality net time after hours — under lights that mimic match-evening conditions.</p>
+    </div>
+  </section>
+
+  <footer style="background:#061e16;color:#cdd6ce;padding:70px 40px 40px">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(233,162,59,.18)">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e)"></span><span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC">RPCA</span></div>
+        <p style="margin-top:16px;font-size:14px;line-height:1.6;max-width:280px;color:#9fb0a6">Ranchi Players Cricket Academy. Developing Jharkhand's next generation of cricketers — one disciplined session at a time.</p>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">EXPLORE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+          <a href="Programs.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Programs</a>
+          <a href="Facilities.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Facilities</a>
+          <a href="Coaches.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Coaches</a>
+          <a href="Gallery.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">VISIT</div>
+        <div style="font-size:14px;line-height:1.7;color:#9fb0a6">Morabadi Ground area,<br>Ranchi, Jharkhand 834008<br><br>Mon–Sat · 5:30 AM–9:00 PM</div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">CONNECT</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;color:#9fb0a6">
+          <a href="tel:+919000000000" style="color:#cdd6ce" style-hover="color:#E9A23B">+91 90000 00000</a>
+          <a href="mailto:hello@rpca.in" style="color:#cdd6ce" style-hover="color:#E9A23B">hello@rpca.in</a>
+          <a href="https://instagram.com/rpca_cricket_academy_ranchi" target="_blank" style="color:#cdd6ce" style-hover="color:#E9A23B">@rpca_cricket_academy_ranchi</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:20px auto 0;display:flex;justify-content:space-between;font-size:12px;color:#6f7f75;letter-spacing:.5px">
+      <span>© 2026 RPCA Cricket Academy, Ranchi.</span>
+      <span>Not affiliated with any official body or player. Contact details are placeholders.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const I = (p) => `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+    return {
+      facilities: [
+        { title: "TURF & MATTING NETS", desc: "Multiple practice nets on both turf and matting, so batters and bowlers train on true, match-realistic surfaces every session.", icon: I('<path d="M3 3v18M9 3v18M15 3v18M21 3v18"/><path d="M3 8h18M3 14h18"/>') },
+        { title: "PRACTICE PITCHES", desc: "Well-maintained centre-wicket pitches for match simulation, longer batting spells and realistic bowling practice.", icon: I('<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 3v18M15 3v18"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/>') },
+        { title: "FLOODLIGHTS", desc: "Full evening lighting so working and studying players can train after hours under bright, match-like conditions.", icon: I('<path d="M12 2v4"/><path d="M6 8h12l-1 3H7z"/><path d="M9 11v4a3 3 0 0 0 6 0v-4"/><path d="M12 18v4"/>') },
+        { title: "BOWLING MACHINE", desc: "Program pace, length and swing to drill specific shots and situations with high-repetition, consistent deliveries.", icon: I('<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 6.9 4"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/>') },
+        { title: "VIDEO ANALYSIS", desc: "Sessions filmed and reviewed with coaches so players actually see their technique — the fastest way to fix it.", icon: I('<rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/>') },
+        { title: "GYM & CONDITIONING", desc: "A dedicated strength and conditioning space for cricket-specific fitness, mobility and injury-prevention work.", icon: I('<path d="M6 7v10M18 7v10M4 9v6M20 9v6M6 12h12"/>') },
+        { title: "EQUIPMENT", desc: "Quality practice equipment on hand — from bowling markers and cones to protective gear — so no session is held back by kit.", icon: I('<path d="M4 20l9-9"/><path d="M11 4l5 5-3 3-5-5z"/><path d="M13 6l3 3"/><circle cx="18.5" cy="18.5" r="2.5"/>') },
+        { title: "CLUBHOUSE & SHADE", desc: "Seating and shaded rest areas for players and parents, with clean water and space to regroup between drills.", icon: I('<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/>') },
+      ],
+    };
+  }
+  componentDidMount() {
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach((e) => { e.style.opacity = '0'; e.style.transform = 'translateY(26px)'; e.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; io.unobserve(en.target); } });
+    }, { threshold: 0.1 });
+    els.forEach((e) => io.observe(e));
+  }
+}
+</script>
+</body>
+</html>

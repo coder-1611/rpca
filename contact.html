@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — RPCA · Ranchi Players Cricket Academy</title>
+<meta name="description" content="Book a trial at Ranchi Players Cricket Academy. Bring your kit — one session tells you everything. Morning and evening batches at DIG Ground, Bariatu, Ranchi. The quickest way to reach us is on Instagram.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="grain"></div>
+<div class="vignette"></div>
+<div class="cursor" id="cursor"></div>
+
+<div class="spine" aria-hidden="true">
+  <svg id="spineSvg" preserveAspectRatio="none" viewBox="0 0 100 100">
+    <path class="arc-glow" id="arcGlow" vector-effect="non-scaling-stroke"></path>
+    <path class="arc" id="arcPath" vector-effect="non-scaling-stroke"></path>
+  </svg>
+  <div class="spine-ball" id="spineBall"></div>
+</div>
+
+<header id="hdr">
+  <a class="brand" href="index.html" aria-label="RPCA home">
+    <svg class="mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" fill="#c9432a" stroke="#f2a71b" stroke-width="1.5"/>
+      <path d="M8 13 Q20 20 32 13 M8 27 Q20 20 32 27" stroke="#f4efe1" stroke-width="1.3" fill="none" opacity=".85"/>
+    </svg>
+    RPCA
+  </a>
+  <nav class="nav-links" id="nav">
+    <a href="programs.html">Programs</a>
+    <a href="coaches.html">Coaches</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a class="nav-cta" href="contact.html">Book a Trial</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ═══ SUB-HERO ═══ -->
+<section class="subhero">
+  <div class="bg"><img src="uploads/team-on-ground.jpg" alt="The RPCA squad together on the ground"></div>
+  <div class="subhero-inner">
+    <div class="crumb"><a href="index.html">RPCA</a> — 05 · Contact</div>
+    <h1>Book a <em>Trial.</em></h1>
+    <p class="sub">Bring your kit and your intent — one session in the nets tells you everything you need to know.</p>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tickRow"></div></div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section band-night">
+  <div class="wrap">
+    <div class="form-grid">
+      <div>
+        <div class="eyebrow rise">Request a trial</div>
+        <h2 class="big rise" data-d="1" style="margin-top:16px;font-size:clamp(34px,5vw,64px)">Get in the nets.</h2>
+        <form id="trialForm" class="form rise" data-d="2" style="margin-top:30px">
+          <div class="field"><label for="cname">Player name</label><input id="cname" name="name" type="text" placeholder="Full name" required></div>
+          <div class="field row2">
+            <div class="field"><label for="cage">Player age</label><input id="cage" name="age" type="number" min="6" max="60" placeholder="e.g. 13" required></div>
+            <div class="field"><label for="cphone">Phone / WhatsApp</label><input id="cphone" name="phone" type="tel" placeholder="Your number" required></div>
+          </div>
+          <div class="field"><label for="cmsg">What are you looking for?</label><textarea id="cmsg" name="message" placeholder="Batting, bowling, all-round — current level, goals, preferred timings…"></textarea></div>
+          <button type="submit" class="btn btn-amber" style="justify-self:start">Request a Trial →</button>
+          <p class="form-note">We'll follow up to confirm timings. The fastest way to reach us is a DM on Instagram.</p>
+        </form>
+        <div id="formOk" class="form-ok">Thanks — your trial request is in. We'll get back to you to lock in a time. For anything urgent, DM us on Instagram.</div>
+      </div>
+      <div class="contact-cards rise" data-d="3">
+        <div class="ccard">
+          <h4>Message us</h4>
+          <a href="https://www.instagram.com/rpca_cricket_academy_ranchi/" target="_blank" rel="noopener">@rpca_cricket_academy_ranchi</a>
+          <p class="small">Instagram — the quickest way to reach the academy.</p>
+        </div>
+        <div class="ccard">
+          <h4>Where</h4>
+          <p>DIG Ground, Bariatu — Ranchi, Jharkhand</p>
+          <p class="small">Two turf &amp; matting nets. Exact meeting point shared when we confirm your trial.</p>
+        </div>
+        <div class="ccard">
+          <h4>Training times</h4>
+          <p>Morning &amp; evening batches</p>
+          <p class="small">Exact timings confirmed on your visit.</p>
+        </div>
+        <div class="ccard">
+          <h4>Who it's for</h4>
+          <p>Ages 7 to 19+</p>
+          <p class="small">From first-timers to state-pathway players.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <div class="wrap">
+    <div class="eyebrow rise">Or just come by</div>
+    <h2 class="rise" data-d="1">See you at the <em>nets.</em></h2>
+    <p class="sub rise" data-d="2">Whether it's a DM or a walk-in, the answer's the same — come train, and let the session do the talking.</p>
+    <div class="actions rise" data-d="3">
+      <a class="btn btn-amber" href="https://www.instagram.com/rpca_cricket_academy_ranchi/" target="_blank" rel="noopener">Message on Instagram →</a>
+      <a class="btn btn-ghost" href="programs.html">Explore Programs</a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <div class="foot-brand">R<span>P</span>CA</div>
+          <p>Ranchi Players Cricket Academy. A serious cricketing home in Ranchi, Jharkhand — coach-led development and a real pathway to state cricket.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Reach Us</h5>
+          <ul>
+            <li><a href="https://www.instagram.com/rpca_cricket_academy_ranchi/" target="_blank" rel="noopener">◆ @rpca_cricket_academy_ranchi</a></li>
+            <li><a href="contact.html">Book a trial session</a></li>
+            <li><a href="contact.html">DIG Ground, Bariatu · Ranchi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="yr"></span> Ranchi Players Cricket Academy</span>
+        <span class="ig">Where Ranchi learns the game.</span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

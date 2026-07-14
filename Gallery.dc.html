@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;0,6..72,500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',system-ui,sans-serif;background:#F4EDDC;color:#17170F;-webkit-font-smoothing:antialiased}
+  a{color:#0E3B2E;text-decoration:none}
+  a:hover{color:#E9A23B}
+  ::selection{background:#E9A23B;color:#08281E}
+  image-slot::part(ring){display:none}
+  image-slot::part(frame){background:linear-gradient(150deg,#0c3527 0%,#245c46 55%,#c9b892 135%)}
+  image-slot::part(empty){opacity:0}
+  .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;pointer-events:none;text-align:center;padding:20px;transition:opacity .4s ease}
+  image-slot[data-filled] + .ph{opacity:0}
+</style>
+<script src="image-slot.js"></script>
+</helmet>
+
+<div style="min-width:1080px">
+  <header style="position:sticky;top:0;z-index:50;background:#08281E;border-bottom:1px solid rgba(233,162,59,.25)">
+    <nav style="max-width:1320px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;gap:12px">
+        <span style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e);position:relative;box-shadow:0 0 0 2px rgba(233,162,59,.35)"><span style="position:absolute;inset:0;border-radius:50%;border-top:2px dashed rgba(8,40,30,.55);border-bottom:2px dashed rgba(8,40,30,.55);transform:rotate(30deg)"></span></span>
+        <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC;line-height:1">RPCA</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:6px">
+        <a href="Home.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Home</a>
+        <a href="Programs.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Programs</a>
+        <a href="Facilities.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Facilities</a>
+        <a href="Coaches.dc.html" style="color:#EFE7D4;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px" style-hover="color:#E9A23B">Coaches</a>
+        <a href="Gallery.dc.html" style="color:#E9A23B;font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:9px 11px">Gallery</a>
+        <a href="Contact.dc.html" style="margin-left:12px;background:#E9A23B;color:#08281E;font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;padding:11px 18px;border-radius:2px" style-hover="background:#F4EDDC">Book a Trial</a>
+      </div>
+    </nav>
+  </header>
+
+  <section style="background:#08281E;padding:96px 40px 70px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-160px;left:30%;width:520px;height:520px;background:radial-gradient(circle,rgba(233,162,59,.20),transparent 62%);pointer-events:none"></div>
+    <div style="max-width:1320px;margin:0 auto;position:relative">
+      <span data-reveal style="font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#E9A23B;font-weight:800">Gallery</span>
+      <h1 data-reveal style="font-family:'Anton',sans-serif;font-size:clamp(56px,9vw,128px);line-height:.9;color:#F4EDDC;margin-top:16px">LIFE AT RPCA</h1>
+      <p data-reveal style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(19px,2.1vw,25px);color:#EFE7D4;max-width:640px;margin-top:20px;line-height:1.5">Early mornings in the nets, matches under lights, and the everyday work that turns young players into cricketers. Drag your own photos into any frame.</p>
+    </div>
+  </section>
+
+  <section style="background:#F4EDDC;padding:70px 40px 100px">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="12">
+        <div data-reveal style="position:relative;border-radius:6px;overflow:hidden;background:#0E3B2E;grid-column:{{ t.col }};grid-row:{{ t.row }}">
+          <image-slot id="{{ t.id }}" src="{{ t.src }}" shape="rect" fit="cover" placeholder="{{ t.ph }}"></image-slot>
+          <div class="ph"><svg width="52" height="52" viewBox="0 0 100 100" fill="none" stroke="#E9A23B" stroke-width="2" stroke-linecap="round" opacity="0.5"><circle cx="50" cy="50" r="32"/><path d="M33 25C46 41 46 59 33 75"/><path d="M31 31l5 2M29 39l5 1M28 47l5 0M28 55l5-1M29 63l5-1M31 71l5-2"/></svg><span style="font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;color:rgba(233,216,174,.8)">{{ t.ph }}</span></div>
+          <div style="position:absolute;left:0;bottom:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(6,30,22,.85));pointer-events:none">
+            <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E9A23B;font-weight:800">{{ t.tag }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div data-reveal style="max-width:1320px;margin:60px auto 0;text-align:center">
+      <p style="font-family:'Newsreader',serif;font-style:italic;font-size:22px;color:#3a3a2e">Want to be in the next frame?</p>
+      <a href="Contact.dc.html" style="display:inline-block;margin-top:18px;background:#08281E;color:#F4EDDC;font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:15px;padding:18px 40px;border-radius:2px" style-hover="background:#E9A23B;color:#08281E">Book a Trial →</a>
+    </div>
+  </section>
+
+  <footer style="background:#061e16;color:#cdd6ce;padding:70px 40px 40px">
+    <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(233,162,59,.18)">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#f3c069,#E9A23B 60%,#c47f1e)"></span><span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:1.5px;color:#F4EDDC">RPCA</span></div>
+        <p style="margin-top:16px;font-size:14px;line-height:1.6;max-width:280px;color:#9fb0a6">Ranchi Players Cricket Academy. Developing Jharkhand's next generation of cricketers — one disciplined session at a time.</p>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">EXPLORE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+          <a href="Programs.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Programs</a>
+          <a href="Facilities.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Facilities</a>
+          <a href="Coaches.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Coaches</a>
+          <a href="Gallery.dc.html" style="color:#cdd6ce" style-hover="color:#E9A23B">Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">VISIT</div>
+        <div style="font-size:14px;line-height:1.7;color:#9fb0a6">Morabadi Ground area,<br>Ranchi, Jharkhand 834008<br><br>Mon–Sat · 5:30 AM–9:00 PM</div>
+      </div>
+      <div>
+        <div style="font-family:'Anton',sans-serif;color:#E9A23B;letter-spacing:1px;font-size:15px;margin-bottom:16px">CONNECT</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;color:#9fb0a6">
+          <a href="tel:+919000000000" style="color:#cdd6ce" style-hover="color:#E9A23B">+91 90000 00000</a>
+          <a href="mailto:hello@rpca.in" style="color:#cdd6ce" style-hover="color:#E9A23B">hello@rpca.in</a>
+          <a href="https://instagram.com/rpca_cricket_academy_ranchi" target="_blank" style="color:#cdd6ce" style-hover="color:#E9A23B">@rpca_cricket_academy_ranchi</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:20px auto 0;display:flex;justify-content:space-between;font-size:12px;color:#6f7f75;letter-spacing:.5px">
+      <span>© 2026 RPCA Cricket Academy, Ranchi.</span>
+      <span>Not affiliated with any official body or player. Contact details are placeholders.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      tiles: [
+        { id: "g1", col: "1 / 3", row: "1 / 3", tag: "Youth batch · nets", ph: "Young batter in the nets", src: "uploads/youth-batting.jpg" },
+        { id: "g2", col: "3 / 4", row: "1 / 2", tag: "Coaching drill", ph: "Coach and batter in the nets", src: "uploads/nets-training.jpg" },
+        { id: "g3", col: "4 / 5", row: "1 / 2", tag: "On the ground", ph: "Team out on the ground", src: "uploads/team-on-ground.jpg" },
+        { id: "g4", col: "3 / 5", row: "2 / 3", tag: "Under lights", ph: "Evening session under floodlights", src: "uploads/nets-floodlights.jpg" },
+        { id: "g5", col: "1 / 2", row: "3 / 4", tag: "Match heroes", ph: "Jharkhand T20 — Match Heroes", src: "uploads/match-heroes.jpg" },
+        { id: "g6", col: "2 / 4", row: "3 / 4", tag: "Champions", ph: "Team with the trophy", src: "uploads/team-champions-trophy.jpg" },
+        { id: "g7", col: "4 / 5", row: "3 / 5", tag: "Silverware", ph: "Trophy in hand", src: "uploads/trophy-win.jpg" },
+        { id: "g8", col: "1 / 2", row: "4 / 5", tag: "In the nets", ph: "Net practice", src: "uploads/nets-training.jpg" },
+        { id: "g9", col: "2 / 4", row: "4 / 5", tag: "The squad", ph: "Team out on the ground", src: "uploads/team-on-ground.jpg" },
+      ],
+    };
+  }
+  componentDidMount() {
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach((e) => { e.style.opacity = '0'; e.style.transform = 'translateY(26px)'; e.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.style.opacity = '1'; en.target.style.transform = 'none'; io.unobserve(en.target); } });
+    }, { threshold: 0.08 });
+    els.forEach((e) => io.observe(e));
+  }
+}
+</script>
+</body>
+</html>
