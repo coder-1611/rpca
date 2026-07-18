@@ -19,12 +19,17 @@
   const reel = $('#reel');
   if(reel){
     const shots = [
-      ['uploads/team-champions-trophy.jpg','Champions'],
+      ['uploads/titans-league-night.jpg','Under Lights'],
+      ['uploads/nets-full-squad.jpg','The Full Squad'],
+      ['uploads/chaibasa-champions.jpg','Champions'],
+      ['uploads/cake-close.jpg','The Juniors'],
       ['uploads/nets-training.jpg','In the Nets'],
+      ['uploads/ldca-winners-trophy.jpg','Winners'],
+      ['uploads/academy-group-pitch.jpg','Match Morning'],
       ['uploads/youth-batting.jpg','Next Generation'],
-      ['uploads/team-on-ground.jpg','Match Day'],
-      ['uploads/nets-floodlights.jpg','Net Session'],
-      ['uploads/trophy-win.jpg','Silverware'],
+      ['uploads/ldca-team-medals.jpg','Medals'],
+      ['uploads/huddle-red-pavilion.jpg','The Huddle'],
+      ['uploads/lpl-champions.jpg','Lohardaga Premier League'],
       ['uploads/yuvraj-highlighted.jpg','Jharkhand T20'],
     ];
     const build = ()=>shots.map(([s,c])=>`<figure><img src="${s}" alt="${c}" loading="lazy"><figcaption>${c}</figcaption></figure>`).join('');
@@ -110,6 +115,143 @@
     window.addEventListener('scroll', req, {passive:true});
     window.addEventListener('resize', updateSpine);
     updateSpine();
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     PHOTOGRAPHY & FILM LAYER — hero mosaic, panoramas, clips, lightbox.
+     All guarded; a page that has none of these pays nothing.
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* ——— parallax: hero mosaic frames + full-bleed panoramas ———
+     One scroll listener drives both, rAF-throttled. */
+  const paraFrames = $$('.hm-frame'), panos = $$('.pano img');
+  if((paraFrames.length || panos.length) && !reduce){
+    const runPara = ()=>{
+      const y = window.scrollY, vh = window.innerHeight;
+      /* mosaic frames drift at staggered depths as the hero leaves.
+         Skipped below 1100px, where they sit in a single aligned filmstrip
+         that staggered drift would visibly pull apart. */
+      if(window.innerWidth > 1100){
+        paraFrames.forEach((f,i)=>{
+          const depth = [0.16,0.09,0.23][i % 3];
+          f.style.transform = `translateY(${(y*depth).toFixed(1)}px)`;
+        });
+      }
+      /* panoramas counter-scroll inside their own overflow box */
+      panos.forEach(img=>{
+        const r = img.parentElement.getBoundingClientRect();
+        if(r.bottom < -100 || r.top > vh + 100) return;
+        /* -1 (band entering from below) .. 1 (band leaving above) */
+        const p = (r.top + r.height/2 - vh/2) / (vh/2 + r.height/2);
+        img.style.transform = `translateY(${(p * 7).toFixed(2)}%)`;
+      });
+    };
+    let pTick = false;
+    const reqPara = ()=>{ if(!pTick){ pTick = true; requestAnimationFrame(()=>{ runPara(); pTick = false; }); } };
+    window.addEventListener('scroll', reqPara, {passive:true});
+    window.addEventListener('resize', reqPara);
+    runPara();
+  }
+
+  /* ——— video cards: hover warms the clip (muted loop), click opens it ———
+     Nothing but the poster JPEG is fetched until the user shows intent. */
+  const vcards = $$('.vcard');
+  if(vcards.length){
+    const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+    vcards.forEach(card=>{
+      const src = card.dataset.src;
+      if(!src) return;
+      let vid = null;
+      const warm = ()=>{
+        if(reduce) return;
+        if(!vid){
+          vid = document.createElement('video');
+          vid.src = src; vid.muted = true; vid.loop = true;
+          vid.playsInline = true; vid.preload = 'none';
+          vid.setAttribute('aria-hidden','true'); vid.tabIndex = -1;
+          card.appendChild(vid);
+        }
+        card.classList.add('warm');
+        vid.play().catch(()=>{ /* autoplay refused — poster stands in */ });
+      };
+      const cool = ()=>{
+        card.classList.remove('warm');
+        if(vid) vid.pause();
+      };
+      if(fine){
+        card.addEventListener('mouseenter', warm);
+        card.addEventListener('mouseleave', cool);
+      }
+      /* pause any warmed clip that scrolls away, so we never burn cycles
+         (or battery) decoding video nobody is looking at */
+      new IntersectionObserver(es=>{
+        es.forEach(e=>{ if(!e.isIntersecting) cool(); });
+      },{threshold:0}).observe(card);
+    });
+  }
+
+  /* ——— lightbox — one instance, shared by photos (.ed) and clips (.vcard) ——— */
+  const lbItems = $$('[data-lb]');
+  if(lbItems.length){
+    const lb = document.createElement('div');
+    lb.className = 'lb'; lb.id = 'lb';
+    lb.setAttribute('role','dialog');
+    lb.setAttribute('aria-modal','true');
+    lb.setAttribute('aria-label','Media viewer');
+    lb.innerHTML =
+      '<button class="lb-btn lb-close" aria-label="Close viewer">✕</button>'+
+      '<button class="lb-btn lb-prev" aria-label="Previous">‹</button>'+
+      '<button class="lb-btn lb-next" aria-label="Next">›</button>'+
+      '<div class="lb-stage"></div>'+
+      '<div class="lb-cap"></div>';
+    document.body.appendChild(lb);
+    const stage = $('.lb-stage', lb), cap = $('.lb-cap', lb);
+    let idx = 0, lastFocus = null;
+
+    const render = ()=>{
+      const el = lbItems[idx];
+      const video = el.dataset.src;                       /* .vcard carries the clip */
+      const img = el.dataset.full || (el.querySelector('img')||{}).src;
+      const title = el.dataset.title || '';
+      const meta = el.dataset.meta || '';
+      stage.innerHTML = video
+        ? `<video src="${video}" controls autoplay playsinline loop></video>`
+        : `<img src="${img}" alt="${title.replace(/"/g,'&quot;')}">`;
+      cap.innerHTML = title + (meta ? ` &nbsp;·&nbsp; <b>${meta}</b>` : '');
+    };
+    const open = (i)=>{
+      idx = i; lastFocus = document.activeElement;
+      render();
+      lb.classList.add('open');
+      document.body.classList.add('lb-lock');
+      $('.lb-close', lb).focus();
+    };
+    const close = ()=>{
+      lb.classList.remove('open');
+      document.body.classList.remove('lb-lock');
+      stage.innerHTML = '';                                /* stops playback */
+      if(lastFocus) lastFocus.focus();
+    };
+    const step = (n)=>{ idx = (idx + n + lbItems.length) % lbItems.length; render(); };
+
+    lbItems.forEach((el,i)=>{
+      el.setAttribute('tabindex','0');
+      el.setAttribute('role','button');
+      el.addEventListener('click', ()=>open(i));
+      el.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(i); }
+      });
+    });
+    $('.lb-close', lb).addEventListener('click', close);
+    $('.lb-prev', lb).addEventListener('click', ()=>step(-1));
+    $('.lb-next', lb).addEventListener('click', ()=>step(1));
+    lb.addEventListener('click', e=>{ if(e.target === lb) close(); });
+    document.addEventListener('keydown', e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      else if(e.key === 'ArrowLeft') step(-1);
+      else if(e.key === 'ArrowRight') step(1);
+    });
   }
 
   /* ═══ HOME hero — floodlit field canvas (only if present) ═══ */
