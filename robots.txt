@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*.dc.html$
+Disallow: /support.js
+Disallow: /image-slot.js
+
+Sitemap: https://www.ranchicricket.com/sitemap.xml
