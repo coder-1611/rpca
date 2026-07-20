@@ -130,9 +130,26 @@ Static dc-runtime — must be served over HTTP (self-loads React + fetches compo
   on push to `main` via the Vercel GitHub integration ("Other" preset, root `./`, no build).
 
 ## SEO (2026-07-20)
-All 5 pages carry: Ranchi-keyword `<title>` + description, `rel=canonical` (www host), OG/Twitter
-tags, and `SportsActivityLocation` JSON-LD (DIG Ground Bariatu address, Instagram sameAs — **no
-phone/email/foundingDate**, per the content constraints). `sitemap.xml` + `robots.txt` at root;
-robots blocks the legacy `*.dc.html` duplicates from indexing. Owner has a Google Business Profile
-(set up separately, not in repo). Still pending: Google Search Console registration + sitemap
-submission (needs owner's Google account).
+All 6 pages (now incl. `faq.html`) carry: Ranchi-keyword `<title>` + description, `rel=canonical`
+(www host), OG/Twitter tags, and `SportsActivityLocation` JSON-LD. `sitemap.xml` + `robots.txt` at
+root; robots blocks the legacy `*.dc.html` duplicates from indexing.
+
+**NAP (must stay in sync with the Google Business Profile):**
+- Name (exact GBP name): `Ranchi Players Cricket Academy (RPCA)` — schema `name` matches this;
+  do NOT rename the GBP (renames can trigger re-verification).
+- Phone (owner-verified 2026-07-20): **+91 70049 41788** — in schema `telephone`, contact ccard,
+  every footer, and the FAQ. The old "no phone" constraint is lifted; email is still not a thing.
+- GBP address pin: 98PV+8RM, Sarhul Nagar, Morabadi, Ranchi 834001 (= the DIG Ground, Bariatu
+  ground). Site schema keeps `streetAddress: DIG Ground, Bariatu` + `postalCode: 834001`.
+- GBP: category Cricket club + Sports school, website https://www.ranchicricket.com/, hours set,
+  15 reviews @5.0 (2026-07-20). Business id 3613179692401667853.
+
+**Search engines:** GSC property `https://www.ranchicricket.com/` verified via
+`google7cff4e4081bf3e2f.html` (never delete). Sitemap submitted (6 pages discovered); indexing
+requested on all pages 2026-07-20. Bing et al. pinged via IndexNow — key file
+`8352a6474785960d6afa04fe207e41eb.txt` at root (key also in `seo/indexnow-key.txt`).
+
+**Campaign:** goal = page 1 for "cricket academy in ranchi". `seo/rank-log.md` is the position log;
+`seo/` holds the human-action drafts (WhatsApp review ask, Justdial/Sulekha text, press pitch).
+Daily cloud check: routine `rpca-rank-check` (trig_01SPmQtxE9gzUZug94FnwKKi, 14:07 UTC) at
+https://claude.ai/code/routines — delete it once page 1 is verified.
