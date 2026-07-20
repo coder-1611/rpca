@@ -3,8 +3,8 @@
 Use these EXACT details everywhere (must match the Google Business Profile character-for-character —
 NAP consistency is a local-ranking signal):
 
-- **Name:** RPCA — Ranchi Players Cricket Academy
-- **Address:** DIG Ground, Bariatu, Ranchi, Jharkhand
+- **Name:** Ranchi Players Cricket Academy (RPCA)  ← must match the GBP name exactly
+- **Address:** match the GBP listing exactly: 98PV+8RM, Sarhul Nagar, Morabadi, Ranchi, Jharkhand 834001 (the DIG Ground, Bariatu pin)
 - **Phone:** +91 70049 41788
 - **Website:** https://www.ranchicricket.com
 - **Category:** Cricket Academy / Cricket Coaching Classes / Sports Training
