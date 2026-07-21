@@ -7,7 +7,7 @@ The daily automated check is the `rpca-rank-check` routine at https://claude.ai/
 | Date (UTC) | Organic position | Map pack | Notes |
 |---|---|---|---|
 | 2026-07-20 | Not in top 20 | Not shown (pack: Ranchi Cricket Academy 4.7/35, YBN 4.9/293, Gurukul 4.4/156) | Baseline. Domain 6 days old. Today: GSC verified, sitemap submitted (6 pages), indexing requested on all pages, FAQ page live, GBP website→www + Sports school category added, IndexNow pinged. |
-| 2026-07-20 (latest hourly re-check ~19:59 local) | Not in top 20 | Not shown (pack rotated: YBN, Ranchi CA, Rockman 3.9/560) | No change for RPCA. Pack composition rotates — confirms it's contestable. |
+| 2026-07-21 08:31 | Not in top 20 | Not shown | Day 2, no change — indexing/GBP edits still propagating. |
 
 
 ## Competitive read (2026-07-20)
