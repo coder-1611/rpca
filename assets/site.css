@@ -387,6 +387,7 @@ footer.flush{margin-top:0}
   display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--dim)}
 .foot-bottom .ig{color:var(--amber)}
+.foot-bottom .made{opacity:.7}
 
 /* ═══ responsive ═══ */
 @media (max-width:960px){
