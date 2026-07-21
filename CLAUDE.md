@@ -149,7 +149,17 @@ root; robots blocks the legacy `*.dc.html` duplicates from indexing.
 requested on all pages 2026-07-20. Bing et al. pinged via IndexNow — key file
 `8352a6474785960d6afa04fe207e41eb.txt` at root (key also in `seo/indexnow-key.txt`).
 
+**Image weight rule (added 2026-07-21):** every full-bleed or hero image must ship a right-sized
+`-sm` variant via `srcset`. The `-lg` masters are 2200px/700–830KB and are for the lightbox only —
+`senior-squad-pano-lg.jpg` alone was 809KB of a 1.3MB mobile homepage. Mobile homepage is now 665KB
+total / 379KB images; keep it there. Generate variants with PIL (see `RPCA reports/`).
+
+**Mobile hero:** below 1100px `.hero-mosaic` is **in normal flow**, not absolute. It used to be
+absolutely positioned and overlapped `.hero-eyebrow` once that wrapped to a third line (≤360px).
+Don't reintroduce `position:absolute` there without re-testing at 320px.
+
 **Campaign:** goal = page 1 for "cricket academy in ranchi". `seo/rank-log.md` is the position log;
+`RPCA reports/` holds the dated daily reports and the SEOptimer audit write-up;
 `seo/` holds the human-action drafts (WhatsApp review ask, Justdial/Sulekha text, press pitch).
 Daily cloud check: routine `rpca-rank-check` (trig_01SPmQtxE9gzUZug94FnwKKi, 14:07 UTC) at
 https://claude.ai/code/routines — delete it once page 1 is verified.
