@@ -14,6 +14,8 @@ The daily automated check is the `rpca-rank-check` routine at https://claude.ai/
 
 | 2026-07-23 | Not in top 9 (Ranchi context) | Not shown | Reviews holding at 6 (no further drop, no recovery). Goal cleared today; code work complete. |
 
+| 2026-07-24 | Not in top 9 (Ranchi context) | Not shown | No change. Reviews 6 @5.0. |
+
 
 ## Competitive read (2026-07-20)
 - The map pack is a **reviews contest**: YBN 293 reviews, Gurukul 156, Ranchi Cricket Academy 35. RPCA: 15 at 5.0★.
